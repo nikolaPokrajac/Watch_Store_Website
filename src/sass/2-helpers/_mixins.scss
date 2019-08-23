@@ -1,0 +1,27 @@
+// MEDIA QUERY
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==bp-small {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==bp-medium {
+    @media only screen and (max-width: 800px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==bp-large {
+    @media only screen and (max-width: 1000px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==bp-largest {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}

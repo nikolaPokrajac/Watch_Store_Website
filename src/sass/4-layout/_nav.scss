@@ -1,0 +1,150 @@
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $color-border-light;
+  z-index: 1000;
+
+  @include respond(bp-medium) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: $color-main-white;
+    flex-direction: column;
+    width: 50%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  @include respond(bp-small) {
+    width: 100%;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    @include respond(bp-medium) {
+      margin-top: 5rem;
+    }
+  }
+
+  &__logo {
+    height: 2.5rem;
+    width: auto;
+    padding: 0 3rem;
+    border-right: $color-border-light;
+
+    @include respond(bp-largest) {
+      height: 2rem;
+    }
+
+    @include respond(bp-large) {
+      height: 1.7rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &__brand {
+    font-size: 3rem;
+    padding: 0 3rem;
+    line-height: 8rem;
+    border-left: $color-border-light;
+    color: $color-gray-dark-3;
+
+    @include respond(bp-largest) {
+      font-size: 2.5rem;
+      padding: 0 2.5rem;
+    }
+
+    @include respond(bp-large) {
+      font-size: 2.1rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &__dot {
+    color: #f2c16c;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__list {
+    height: 8rem;
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    padding: 0 3rem;
+    line-height: 8rem;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    font-size: 1.6rem;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.075);
+    }
+
+    @include respond(bp-largest) {
+      padding: 0 2.5rem;
+    }
+
+    @include respond(bp-large) {
+      font-size: 1.4rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-gray-dark-3;
+  }
+
+
+  &__middle {
+    @include respond(bp-medium) {
+      width: 100%;
+      text-align: center;
+
+      & ul {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      & li {
+        opacity: 0;
+        font-size: 1.8rem;
+      }
+
+      & a {
+        display: block;
+        padding: 1.5rem 0;
+      }
+    }
+  }
+
+  &__right {
+    @include respond(bp-medium) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__right &__item {
+    border-right: $color-border-light;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:nth-child(1) {
+      border-left: $color-border-light;
+    }
+  }
+
+  &__active {
+    transform: translateX(0);
+  }
+}
